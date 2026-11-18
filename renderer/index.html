@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quartz Client</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+
+  <aside class="sidebar">
+    <div class="brand">
+      <svg width="38" height="38" viewBox="0 0 48 48" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f4a6c8" />
+            <stop offset="1" stop-color="#9a7cf2" />
+          </linearGradient>
+        </defs>
+        <polygon points="24,3 42,13 42,35 24,45 6,35 6,13" fill="url(#g1)" />
+        <polygon points="24,3 42,13 24,24 6,13" fill="#fff" opacity=".45" />
+        <polygon points="24,24 42,13 42,35 24,45" fill="#6c4fd6" opacity=".28" />
+        <polygon points="24,24 6,13 6,35 24,45" fill="#fff" opacity=".12" />
+      </svg>
+      <div>
+        <div class="brand-name">Quartz</div>
+        <div class="brand-sub">Client</div>
+      </div>
+    </div>
+    <nav id="nav"></nav>
+    <div class="side-foot">
+      <div id="acct-chip" class="chip"></div>
+    </div>
+  </aside>
+
+  <main id="view"></main>
+  <div id="toasts"></div>
+  <div id="modal-root"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

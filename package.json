@@ -1,0 +1,41 @@
+{
+  "name": "quartz-client",
+  "version": "0.1.0",
+  "description": "Quartz Client - jasny, szybki launcher Minecrafta",
+  "main": "src/main.js",
+  "author": "Quartz",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron . --no-sandbox",
+    "dist": "electron-builder --win --publish never"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16",
+    "minecraft-launcher-core": "^3.18.2",
+    "msmc": "^5.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "pl.quartz.client",
+    "productName": "Quartz Client",
+    "directories": { "output": "dist", "buildResources": "build" },
+    "files": ["src/**/*", "renderer/**/*", "package.json"],
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] },
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "Quartz-Client-Setup-${version}.${ext}"
+    },
+    "portable": {
+      "artifactName": "Quartz-Client-Portable-${version}.${ext}"
+    }
+  }
+}
